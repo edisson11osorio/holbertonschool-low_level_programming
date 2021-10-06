@@ -1,10 +1,10 @@
 #include "main.h"
-int main(void)
-{
 /**
 * main - _putchar - write a program
 * Return: 0
 */
+int main(void)
+{
 _putchar(95);
 _putchar(112);
 _putchar(117);
