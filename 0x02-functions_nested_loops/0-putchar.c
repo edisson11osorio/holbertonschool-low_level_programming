@@ -2,8 +2,8 @@
 int main(void)
 {
 /**
-*main - print_holberton
-*Return: 0
+* main - _putchar - write a program
+* Return: 0
 */
 _putchar(95);
 _putchar(112);
