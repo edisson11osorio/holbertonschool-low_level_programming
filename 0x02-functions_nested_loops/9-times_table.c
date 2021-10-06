@@ -19,5 +19,13 @@ if (z >= 10)
 _putchar((z / 10) + '0');
 _putchar((z % 10) + '0');
 }
+else if
+((z < 10) && (z != 0))
+{
+_putchar(' ');
+_putchar((z % 10) + '0');
+}
+else
+_putchar((z % 10) + '0');
 }
 }
