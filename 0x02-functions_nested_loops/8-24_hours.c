@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * jack_bauer - hours and min
- * 23:59
- */
+ * jack_bauer - hours and minutes
+ * 23:59.
+*/
 
 void jack_bauer(void)
 {
