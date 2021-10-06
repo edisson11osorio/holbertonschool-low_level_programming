@@ -9,7 +9,7 @@ int letter = 97;
 while (letter <= 122)
 {
 _putchar(letter);
-letter++;    
+letter++;
 }
-_putchar('\n');    
+_putchar('\n');
 }
