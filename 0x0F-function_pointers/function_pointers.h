@@ -1,7 +1,7 @@
-#ifndef FUNCTION_TO_POINTERS
-#define FUNCTION_TO_POINTERS
+#ifndef _FUNCTION_FILE_H_
+#define _FUNCTION_FILE_H_
+#include <stdlib.h>
 
-int _putchar(char);
 void print_name(char *name, void (*f)(char *));
 void array_iterator(int *array, size_t size, void (*action)(int));
 int int_index(int *array, int size, int (*cmp)(int));
