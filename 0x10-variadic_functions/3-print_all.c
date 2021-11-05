@@ -14,9 +14,10 @@ char *str, *separator = "";
 va_list list;
 va_start(list, format);
 if (format)
-{while (format[i])
 {
-switch (format[i]) 
+while (format[i])
+{
+switch (format[i])
 {
 case 'c':
 printf("%s%c", separator, va_arg(list, int));
@@ -36,7 +37,8 @@ break;
 default:
 i++;
 continue;
-}separator = ", ";
+}
+separator = ", ";
 i++;
 }}
 printf("\n");
