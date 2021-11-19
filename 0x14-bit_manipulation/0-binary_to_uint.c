@@ -7,17 +7,17 @@
  *@power: what to raise the base to
  *Return: the exponent value
  */
-int power(int base, int power)
-{
-	int exponent = 1;
+// int power(int base, int power)
+// {
+// 	int exponent = 1;
 
-	while (power > 0)
-	{
-		exponent *= base;
-		power--;
-	}
-	return (exponent);
-}
+// 	while (power > 0)
+// 	{
+// 		exponent *= base;
+// 		power--;
+// 	}
+// 	return (exponent);
+// }
 /**
  *binary_to_uint - converts a binary number to unsigned int
  *@b: a pointer to a string of 0 and 1 characters
