@@ -1,51 +1,64 @@
-#include <stdio.h>
 #include "main.h"
 
-/**
- *power - calculates an exponent
- *@base: the base of the exponent
- *@power: what to raise the base to
- *Return: the exponent value
- */
-int power(int base, int power)
-{
-	int exponent = 1;
+int _pow(int num, int exp);
 
-	while (power > 0)
-	{
-		exponent *= base;
-		power--;
-	}
-	return (exponent);
-}
 /**
- *binary_to_uint - converts a binary number to unsigned int
- *@b: a pointer to a string of 0 and 1 characters
- *Return: the integer conversion, or 0 if there is a non-one or non-zero
- *character or if b is NULL
+ * binary_to_uint - function that converts a binary number to an unsigned int.
+ * @b: pointer to string of 0 or 1 chars
+ * Return: the converted number
+ * or return 0 if there is one or more chars that is not 0 or 1 or if b is NULL
  */
+
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0;
-	unsigned int j = 0;
-	unsigned int num = 0;
+	unsigned int size = 0, number = 0;
+	int i = 0, exp = 0;
 
 	if (b == NULL)
-		return (0);
-
-	while (*(b + i) != '\0')
-		i++;
-	i--;
-	while (i >= 0)
 	{
-		if (*(b + j) == '0' || *(b + j) == '1')
+		return (0);
+	}
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		if (b[i] != '0' && b[i] != '1')
 		{
-			num += ((*(b + j) - '0') * power(2, i));
-			j++;
-			i--;
-		}
-		else
 			return (0);
+		}
+		size++;
+	}
+	for (i = size; i >= 0; i--)
+	{
+		if (b[i] >= '0' && b[i] <= '9')
+		{
+			number += (b[i] - '0') * _pow(2, exp);
+			exp++;
+		}
+	}
+	return (number);
+}
+
+/**
+ * _pow - result of number^exp
+ * @num: base
+ * @exp: potencia
+ * Return: result
+ */
+
+int _pow(int num, int exp)
+{
+	int i;
+
+	if (exp == 0)
+	{
+		return (1);
+	}
+	if (exp == 1)
+	{
+		return (num);
+	}
+	for (i = 2; i <= exp; i++)
+	{
+		num = num * 2;
 	}
 	return (num);
 }
