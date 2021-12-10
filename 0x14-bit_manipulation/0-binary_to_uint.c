@@ -1,34 +1,51 @@
-#include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
- * binary_to_uint- function that converts binary to unsigned int
- * @b: takes in a conts char string
- * Return: the converted unsigned int
+ *power - calculates an exponent
+ *@base: the base of the exponent
+ *@power: what to raise the base to
+ *Return: the exponent value
  */
+int power(int base, int power)
+{
+	int exponent = 1;
 
+	while (power > 0)
+	{
+		exponent *= base;
+		power--;
+	}
+	return (exponent);
+}
+/**
+ *binary_to_uint - converts a binary number to unsigned int
+ *@b: a pointer to a string of 0 and 1 characters
+ *Return: the integer conversion, or 0 if there is a non-one or non-zero
+ *character or if b is NULL
+ */
 unsigned int binary_to_uint(const char *b)
 {
-	int coun = 0;
+	int i = 0;
+	unsigned int j = 0;
 	unsigned int num = 0;
-	unsigned int base = 1;
 
-	if (b)
+	if (b == NULL)
+		return (0);
+
+	while (*(b + i) != '\0')
+		i++;
+	i--;
+	while (i >= 0)
 	{
-		for (coun = 0; b[coun] != '\0'; coun++)
+		if (*(b + j) == '0' || *(b + j) == '1')
 		{
-			if (b[coun] != '1' && (b[coun] != '0'))
-			{
-				return (0);
-			}
+			num += ((*(b + j) - '0') * power(2, i));
+			j++;
+			i--;
 		}
-
-		coun--;
-		for (; coun >= 0; coun--)
-		{
-			num += (b[coun] - '0') * base;
-			base = base * 2;
-		}
+		else
+			return (0);
 	}
 	return (num);
 }
