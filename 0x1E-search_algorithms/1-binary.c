@@ -26,8 +26,8 @@ int binary_search(int *array, size_t left, size_t right, int value)
 	if (array[i] == value)
 		return (i);
 	if (array[i] > value)
-		return (binary_search_recursive(array, left, i - 1, value));
-	return (binary_search_recursive(array, i + 1, right, value));
+		return (binary_search(array, left, i - 1, value));
+	return (binary_search(array, i + 1, right, value));
 }
 
 /**
@@ -45,5 +45,5 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	return (binary_search_recursive(array, 0, size - 1, value));
+	return (binary_search(array, 0, size - 1, value));
 }
