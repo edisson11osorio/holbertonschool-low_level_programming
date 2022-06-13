@@ -10,7 +10,7 @@
   * Return: If the value is not present, -1.
   *         Otherwise, the index where the value is located.
   */
-int binary_search_recursive(int *array, size_t left, size_t right, int value)
+int binary_search(int *array, size_t left, size_t right, int value)
 {
 	size_t i;
 
