@@ -1,53 +1,35 @@
-#ifndef SEARCH_ALGOS_H
-#define SEARCH_ALGOS_H
+#ifndef SEARCHING_H
+#define SEARCHING_H
 
-#include <math.h>
+#include <stdio.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <math.h>
 
-/**
- * struct listint_s - singly linked list
- *
- * @n: Integer
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- *
- * Description: singly linked list node structure
- * for Holberton project
- */
-typedef struct listint_s
-{
-		int n;
-		size_t index;
-		struct listint_s *next;
-} listint_t;
-
-/**
- * struct skiplist_s - Singly linked list with an express lane
- *
- * @n: Integer
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- * @express: Pointer to the next node in the express lane
- *
- * Description: singly linked list node structure with an express lane
- * for Holberton project
- */
-typedef struct skiplist_s
-{
-				int n;
-				size_t index;
-				struct skiplist_s *next;
-				struct skiplist_s *express;
-} skiplist_t;
-
+/* Function that searches for a value in an array using Linear algorithm */
 int linear_search(int *array, size_t size, int value);
-int binary_search(int *array, size_t size, int value);
-int jump_search(int *array, size_t size, int value);
-int interpolation_search(int *array, size_t size, int value);
-int exponential_search(int *array, size_t size, int value);
-int advanced_binary(int *array, size_t size, int value);
-listint_t *jump_list(listint_t *list, size_t size, int value);
-skiplist_t *linear_skip(skiplist_t *list, int value);
 
-#endif
+/* Function that searches for a value in an array using Binary algorithm */
+int binary_search(int *array, size_t size, int value);
+
+/* Function that splits recursively an array */
+int recursive_split(int *array, int leftIndex, int rightIndex, int value);
+
+/* Function that prints an array */
+void print_array(int *array, int start, int end);
+
+/* function that searches for a value in an array using Jump algorithm */
+int jump_search(int *array, size_t size, int value);
+
+/* function that searches for a value in an given part of an array */
+int findIndex(int *array, int leftIndex, int rightIndex, int value);
+
+/* function that searches a value in an array using Interpolation algorithm */
+int interpolation_search(int *array, size_t size, int value);
+
+/*  */
+
+
+#endif /* SEARCHING_H */
