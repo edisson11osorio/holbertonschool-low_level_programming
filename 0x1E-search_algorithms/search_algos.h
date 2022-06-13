@@ -23,12 +23,6 @@ void print_array(int *array, int start, int end);
 /* function that searches for a value in an array using Jump algorithm */
 int jump_search(int *array, size_t size, int value);
 
-/* function that searches for a value in an given part of an array */
-int findIndex(int *array, int leftIndex, int rightIndex, int value);
-
-/* function that searches a value in an array using Interpolation algorithm */
-int interpolation_search(int *array, size_t size, int value);
-
 /*  */
 
 
